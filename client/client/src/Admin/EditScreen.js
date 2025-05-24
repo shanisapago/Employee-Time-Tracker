@@ -1,3 +1,4 @@
+import './EditScreen.css'
 import { useRef } from "react"
 import { useLocation } from "react-router-dom";
 function EditScreen(){
@@ -37,17 +38,20 @@ function EditScreen(){
     
     
     return(
-        <div>
-            <div>
-                <span id='username'>{username}</span>
-                <span id='date'>{date}</span>
+        <div className='screen'>
+            <div className='div-top-edit'>
+                <span id='username-edit'>{username}</span>
+                <span id='date-edit'>{date}</span>
 
             </div>
             
-            
-            <input defaultValue={entry_time} ref={inputEntryRef}></input>
-            <input defaultValue={exit_time} ref={inputExitRef}></input>
-            <div>
+            <div className='input-box'>
+            <input defaultValue={entry_time} ref={inputEntryRef} placeholder='entry time'></input>
+            </div>
+            <div className='input-box'>
+            <input defaultValue={exit_time} ref={inputExitRef} placeholder='exit time'></input>
+            </div>
+            <div className='div-submit-btn'>
                 <button id='save_btn' onClick={save_btn}>save</button>
             </div>
         </div>

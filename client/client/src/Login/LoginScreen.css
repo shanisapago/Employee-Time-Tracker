@@ -1,3 +1,48 @@
 body {
   background-image: url(./sky_img.jpg);
 }
+.loginScreen{
+background-color: whitesmoke;
+height: 35vh;
+width: 25vw;
+margin-left: 35vw;
+margin-top: 30vh;
+opacity: 0.7;
+border-radius: 5%;
+
+
+}
+.input-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7rem;
+  
+
+}
+.login-text{
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+.div-submit-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7rem;
+  margin-top: 2rem;
+  
+
+}
+.submit-btn{
+  background-color: white;
+  border-radius: 10%;
+  border-width: 1px;
+
+}
+#errorMsg{
+  font-size: smaller;
+  display: flex;
+  justify-content: center;
+  color: red;
+}

@@ -1,0 +1,31 @@
+.screen{
+    background-color: whitesmoke;
+    height: 30vh;
+    width: 25vw;
+    margin-left: 35vw;
+    margin-top: 30vh;
+    opacity: 0.7;
+    border-radius: 5%;
+}
+#time{
+    margin-left: 4vw;
+    font-size: larger;
+    font-weight: bold;
+    
+}
+#date{
+    margin-left: 3vw;
+    font-size: larger;
+    font-weight: bold;
+}
+.div-top{
+    padding-top: 7vh;
+    margin-bottom: 7vh;
+}
+.entry-btn{
+    margin-left: 7vw;
+
+}
+.exit-btn{
+margin-left: 2vw;
+}

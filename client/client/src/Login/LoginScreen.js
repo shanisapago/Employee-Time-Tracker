@@ -22,7 +22,7 @@ function LoginScreen() {
         if(res.status==400){
             document.getElementById('username').value = ''
             document.getElementById('password').value = ''
-            //document.getElementById('errorMsg').text = 'your username/password are uncorrect'
+            document.getElementById('errorMsg').innerHTML= 'your username/password are uncorrect'
         }
         else{
           if(result == 'user')
@@ -35,16 +35,17 @@ function LoginScreen() {
         
     }
   return (
-    <div className="LoginScreen">
+    <div className="loginScreen">
      <form>
+            <div className='login-text' > Login</div>
             <div className='input-box'>
             <input type="text" id="username" placeholder='Username'></input>
             </div>
             <div className='input-box'>
             <input type="password" id="password" placeholder='Password' ></input>
             </div>
-            <div>
-            <input type="submit"></input>
+            <div className='div-submit-btn'>
+            <input type="submit" value={"login"} className='submit-btn'></input>
             </div>
             
           </form>

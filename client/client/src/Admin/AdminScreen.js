@@ -1,4 +1,5 @@
 import React from "react"
+import './AdminScreen.css'
 import { useNavigate,useLocation } from "react-router-dom";
 console.log("hiiii")
 function AdminScreen(){
@@ -20,10 +21,13 @@ function AdminScreen(){
                         console.log("in for each "+username_lst)
                         const main_div = document.getElementById('main_div')
                         const username_div = document.createElement('div')
+                        username_div.setAttribute('class','username-admin')
                         username_div.appendChild(document.createTextNode(username_lst))
                         main_div.appendChild(username_div)
                         const table = document.createElement('table')
+                        table.setAttribute('class','content-table')
                         var row = table.insertRow(0);
+                        row.setAttribute('class','table-head')
                         var date_cell = row.insertCell(0);
                         var entry_time_cell = row.insertCell(1);
                         var exit_time_cell = row.insertCell(2);
@@ -38,6 +42,7 @@ function AdminScreen(){
                             const entry_time = json_entry.entry_time
                             const exit_time = json_entry.exit_time
                             var row2 = table.insertRow(rows_numbers);
+                            
                             var date_cell2 = row2.insertCell(0);
                             var entry_time_cell2 = row2.insertCell(1);
                             var exit_time_cell2 = row2.insertCell(2);
@@ -61,7 +66,8 @@ function AdminScreen(){
                                 var date_edit_txt = date_edit[0].textContent
                                 var entry_edit_txt = entry_edit[0].textContent
                                 var exit_edit_txt = exit_edit[0].textContent
-                                navigate('/Edit',{state:{username:username,date: date_edit_txt,
+                                
+                                navigate('/Edit',{state:{username:username_div.textContent,date: date_edit_txt,
                                     entry_time: entry_edit_txt,
                                     exit_time:exit_edit_txt}}
                                 );

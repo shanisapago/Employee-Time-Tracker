@@ -15,12 +15,8 @@ function checkUser(req, res) {
         res.send(role)
 
 }
-function addEntryTime(req,res){
-    console.log("in controllers")
-    usersModel.addEntryTime(req.body.username,req.body.date,req.body.time)
-    res.send()
-}
+
 export{
-    checkUser,addEntryTime
+    checkUser
 
 }

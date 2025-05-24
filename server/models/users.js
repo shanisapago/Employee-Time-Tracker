@@ -21,32 +21,8 @@ function checkUser(username,password)
 
 
 }
-function addEntryTime(username,date,time)
-{
-    console.log("in models")
-    console.log(username)
-    console.log(date)
-    console.log(time)
-    const timeEntry={
-        "username":username,
-        "date":date,
-        "entry_time":time,
-        "exit_time":''
-    }
-    fs.readFile('timeEntries.json','utf8',(err1,data)=>
-    {
-        if(err1)
-            console.log(err1)
-        console.log(data)
-        const d=JSON.parse(data)
-        d.push(timeEntry)
-        fs.writeFile('timeEntries.json' ,JSON.stringify(d,null,2),'utf8',(err)=>console.log(err))
 
-
-    });
-    
-}
 export default {
-    checkUser,addEntryTime
+    checkUser
  
 }

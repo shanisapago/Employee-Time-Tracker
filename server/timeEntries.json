@@ -1,43 +1,44 @@
 [
   {
-    "admin": [
+    "user2": [
       {
-        "date": "05/21/2025",
-        "entry_time": "17:50",
-        "exit_time": "17:57"
+        "date": "05/23/2025",
+        "entry_time": "13:00",
+        "exit_time": "16:00"
       },
       {
-        "date": "05/22/2025",
-        "entry_time": "12:36",
-        "exit_time": "14:00"
+        "date": "05/24/2025",
+        "entry_time": "13:13",
+        "exit_time": "17:55"
+      },
+      {
+        "date": "05/24/2025",
+        "entry_time": "17:55",
+        "exit_time": "18:03"
+      },
+      {
+        "date": "05/24/2025",
+        "entry_time": "18:04",
+        "exit_time": "18:04"
+      },
+      {
+        "date": "05/24/2025",
+        "entry_time": "18:12",
+        "exit_time": "18:13"
       }
     ]
   },
   {
     "user1": [
       {
-        "date": "05/21/2025",
-        "entry_time": "17:00",
-        "exit_time": "19:30"
+        "date": "05/24/2025",
+        "entry_time": "18:24",
+        "exit_time": "18:27"
       },
       {
-        "date": "05/22/2025",
-        "entry_time": "11:04",
-        "exit_time": "15:51"
-      },
-      {
-        "date": "05/22/2025",
-        "entry_time": "15:50",
-        "exit_time": "15:51"
-      }
-    ]
-  },
-  {
-    "user2": [
-      {
-        "date": "05/22/2025",
-        "entry_time": "12:43",
-        "exit_time": ""
+        "date": "05/24/2025",
+        "entry_time": "18:28",
+        "exit_time": "18:28"
       }
     ]
   }
