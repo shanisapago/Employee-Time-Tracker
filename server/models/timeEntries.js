@@ -42,7 +42,7 @@ async function addEntryTime(username,date,time)
             
         }
         if(count==0)
-            fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>console.log(err))
+            fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>{if(err)console.log(err)})
         else
             return -1
 
@@ -78,7 +78,7 @@ async function addExitTime(username,date,time){
             
         });
         if(flag)
-            fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>console.log(err))
+            fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>{if(err)console.log(err)})
         else
             return -1
 
@@ -116,7 +116,7 @@ async function editTimeEntries(username,date,prev_entry_time,prev_exit_time,entr
             }
             
         });
-        fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>console.log(err))
+        fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>{if(err)console.log(err)})
         return;
 
     });

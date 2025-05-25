@@ -18,12 +18,14 @@
 #main_div{
     background-color: whitesmoke;
     height: 80vh;
-    width: 40vw;
+    width: 41vw;
     margin-left: 30vw;
     margin-top: 10vh;
     opacity: 0.7;
     border-radius: 5%;
     padding-left: 3vw;
+    overflow-y: auto;
+
 }
 .logout-btn-right{
     margin-left: 35vw !important;

@@ -1,14 +1,18 @@
 import './EditScreen.css'
-import { useRef } from "react"
-import { useLocation,useNavigate } from "react-router-dom";
+import { useRef,useState  } from "react"
+import { useLocation,useNavigate} from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
+
+
 
 function EditScreen({setIsAuth,setIsAdmin}){
     const navigate = useNavigate();
     const {state} = useLocation()
-    const{username,date,entry_time,exit_time}=state     
+    const{username,date,entry_time,exit_time}=state  
+    const [entryTime,setEntryTime] = useState(entry_time)
     const inputEntryRef = useRef(null);
     const inputExitRef = useRef(null);
+    
 
     const save_btn = async () =>{
         const data = {
@@ -38,6 +42,7 @@ function EditScreen({setIsAuth,setIsAdmin}){
     }
     
     
+    
     return(
         <div className='screen'>
             <div >
@@ -50,12 +55,14 @@ function EditScreen({setIsAuth,setIsAdmin}){
                 <span id='date-edit'>{date}</span>
 
             </div>
+          
+            
             
             <div className='input-box'>
-            <input defaultValue={entry_time} ref={inputEntryRef} placeholder='entry time'></input>
+            <input type='time' defaultValue={entry_time} ref={inputEntryRef} placeholder='entry time'></input>
             </div>
             <div className='input-box'>
-            <input defaultValue={exit_time} ref={inputExitRef} placeholder='exit time'></input>
+            <input type='time' defaultValue={exit_time} ref={inputExitRef} placeholder='exit time'></input>
             </div>
             <div className='div-submit-btn div-submit-btn-up'>
                 <button id='save_btn' onClick={save_btn}>save</button>
