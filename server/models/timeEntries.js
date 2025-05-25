@@ -4,10 +4,6 @@ import fetch from 'node-fetch';
 
 async function addEntryTime(username,date,time)
 {
-    console.log("in models")
-    console.log(username)
-    console.log(date)
-    console.log(time)
     const timeEntry={
         "date":date,
         "entry_time":time,
@@ -16,14 +12,11 @@ async function addEntryTime(username,date,time)
     return fs.promises.readFile('timeEntries.json').then(data=>
     {
       
-        console.log(data)
         const timeEntriesArray=JSON.parse(data)
         //timeEntriesArray.push(timeEntry)
         var flag=false
         var count = 0
         timeEntriesArray.forEach(element => {
-            console.log("keyyyy="+Object.keys(element)[0])
-            console.log(username)
             if(Object.keys(element)[0]==username){
                 flag=true
                 element[Object.keys(element)[0]].forEach(e => {
@@ -62,7 +55,7 @@ async function addExitTime(username,date,time){
      return fs.promises.readFile('timeEntries.json').then(data=>
     {
         
-        console.log(data)
+    
         const timeEntriesArray=JSON.parse(data)
         timeEntriesArray.forEach(element => {
             if(Object.keys(element)[0]==username)
@@ -95,9 +88,6 @@ async function addExitTime(username,date,time){
 }
 async function getTimeEntries(){
     return fs.promises.readFile('timeEntries.json').then(data=>{
-        console.log("data="+data)
-        console.log("type="+typeof(data))
-        console.log(JSON.parse(data))
         return JSON.parse(data)
         
 
@@ -105,18 +95,16 @@ async function getTimeEntries(){
 );
 
 }
-function editTimeEntries(username,date,entry_time,exit_time){
-     fs.readFile('timeEntries.json','utf8',(err1,data)=>
+async function editTimeEntries(username,date,prev_entry_time,prev_exit_time,entry_time,exit_time){
+     return fs.promises.readFile('timeEntries.json').then(data=>
     {
-        if(err1)
-            console.log(err1)
-        console.log(data)
+       
         const timeEntriesArray=JSON.parse(data)
         timeEntriesArray.forEach(element => {
             if(Object.keys(element)[0]==username)
             {
                 element[Object.keys(element)[0]].forEach(j=>{
-                    if(j.date==date)
+                    if(j.date==date&&j.entry_time==prev_entry_time&&j.exit_time==prev_exit_time)
                     {
                         j.entry_time=entry_time
                         j.exit_time=exit_time
@@ -129,6 +117,7 @@ function editTimeEntries(username,date,entry_time,exit_time){
             
         });
         fs.writeFile('timeEntries.json' ,JSON.stringify(timeEntriesArray,null,2),'utf8',(err)=>console.log(err))
+        return;
 
     });
 

@@ -1,6 +1,5 @@
 import usersModel from '../models/timeEntries.js'
 async function addEntryTime(req,res){
-    console.log("in controllers")
     var result = await usersModel.addEntryTime(req.body.username,req.body.date,req.body.time)
     if(result == -1)
         res.status(400)
@@ -14,13 +13,12 @@ async function addExitTime(req,res){
 }
 async function getTimeEntries(req,res){
     const result = await usersModel.getTimeEntries()
-    console.log("result")
-    console.log(result)
     res.send(result)
 }
-function editTimeEntries(req,res)
+async function editTimeEntries(req,res)
 {
-    usersModel.editTimeEntries(req.body.username,req.body.date,req.body.entry_time,req.body.exit_time)
+    await usersModel.editTimeEntries(req.body.username,req.body.date,req.body.prev_entry_time,req.body.prev_exit_time,req.body.entry_time,req.body.exit_time)
+    res.send()
   
 }
 async function getTime(req,res)

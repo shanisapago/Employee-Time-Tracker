@@ -19,13 +19,40 @@
     font-weight: bold;
 }
 .div-top{
-    padding-top: 7vh;
+    padding-top: 5vh;
     margin-bottom: 7vh;
 }
 .entry-btn{
     margin-left: 7vw;
+    background-color: transparent;
+    border-width: 1px;
+    border-radius: 10%;
+
 
 }
 .exit-btn{
 margin-left: 2vw;
+background-color: transparent;
+border-width: 1px;
+border-radius: 10%;
+}
+.error{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+}
+.logout-icon{
+    font-size: xx-large;
+    color: black;
+    
+    
+   
+}
+.logout-btn{
+    margin-left: 21vw;
+    padding-top: 1vh;
+    background: none;
+    border: none;
+   
 }

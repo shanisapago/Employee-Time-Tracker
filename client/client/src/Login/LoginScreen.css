@@ -29,8 +29,7 @@ border-radius: 5%;
 .div-submit-btn{
   display: flex;
   justify-content: center;
-  margin-top: 0.7rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   
 
 }
@@ -38,6 +37,7 @@ border-radius: 5%;
   background-color: white;
   border-radius: 10%;
   border-width: 1px;
+  
 
 }
 #errorMsg{

@@ -9,7 +9,11 @@
     font-weight: bold;
 }
 .div-top-edit{
-padding-top: 4vh;
-padding-bottom: 2vh;
+padding-top: 1vh;
+padding-bottom: 1vh;
 
+}
+.div-submit-btn-up{
+    margin-top: 0.8rem !important;
+  
 }

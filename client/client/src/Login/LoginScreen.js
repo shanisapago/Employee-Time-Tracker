@@ -1,14 +1,16 @@
 import './LoginScreen.css';
-import { useNavigate } from "react-router-dom";
-function LoginScreen() {
+import { useRef,useState } from 'react';
+import { useNavigate} from "react-router-dom";
+function LoginScreen({setIsAuth,setIsAdmin}) {
+    const usernameRef=useRef(null)
+    const passwordRef=useRef(null)
+    const [errorMsg,setErrorMsg] = useState("") 
     const navigate = useNavigate();
     document.onsubmit = async (e) => {
         e.preventDefault();
-        const username = document.getElementById("username").value
-        const password = document.getElementById("password").value
         const data = {
-            username: username,
-            password: password
+            username: usernameRef.current.value,
+            password: passwordRef.current.value
         }
         const res = await fetch('http://localhost:8080/Users/checkUser', {
                 'method': 'post',
@@ -20,15 +22,20 @@ function LoginScreen() {
                 )
         const result = await res.text();
         if(res.status==400){
-            document.getElementById('username').value = ''
-            document.getElementById('password').value = ''
-            document.getElementById('errorMsg').innerHTML= 'your username/password are uncorrect'
+          usernameRef.current.value = ""
+          passwordRef.current.value= ""
+          setErrorMsg('your username/password are uncorrect')
         }
         else{
+          setIsAuth(true)
           if(result == 'user')
-            navigate('/TimeEntry',{state:{username:username}})
+            navigate('/TimeEntry',{state:{username:usernameRef.current.value}})
           else
-            navigate('/Admin',{state:{username:username}})
+          {
+            setIsAdmin(true)
+            navigate('/Admin',{state:{username:usernameRef.current.value}})
+          }
+            
             
 
             }
@@ -39,17 +46,17 @@ function LoginScreen() {
      <form>
             <div className='login-text' > Login</div>
             <div className='input-box'>
-            <input type="text" id="username" placeholder='Username'></input>
+            <input type="text" id="username" placeholder='Username' ref={usernameRef}></input>
             </div>
             <div className='input-box'>
-            <input type="password" id="password" placeholder='Password' ></input>
+            <input type="password" id="password" placeholder='Password' ref={passwordRef} ></input>
             </div>
             <div className='div-submit-btn'>
             <input type="submit" value={"login"} className='submit-btn'></input>
             </div>
             
           </form>
-          <div id="errorMsg"></div>
+          <div id="errorMsg">{errorMsg}</div>
     </div>
   );
 }

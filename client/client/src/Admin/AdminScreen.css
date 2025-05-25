@@ -25,3 +25,12 @@
     border-radius: 5%;
     padding-left: 3vw;
 }
+.logout-btn-right{
+    margin-left: 35vw !important;
+    
+   
+}
+.edit-btn{
+    background: none;
+    border: none;
+}

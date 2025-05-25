@@ -8,5 +8,4 @@ server.use(express.json());
 server.use(cors())
 server.use('/Users', users_router);
 server.use('/TimeEntries', timeEntries_router);
-console.log("in server")
 server.listen(8080)
